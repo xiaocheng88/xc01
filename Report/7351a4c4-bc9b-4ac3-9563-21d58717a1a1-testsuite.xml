@@ -1,0 +1,254 @@
+<ns0:test-suite xmlns:ns0="urn:model.allure.qatools.yandex.ru" start="1541243322824" stop="1541243460437">
+  <name>test_login</name>
+  <labels/>
+  <test-cases>
+    <test-case start="1541243322824" status="passed" stop="1541243365596">
+      <name>Test_Login.test_login[18610453007-123456-itheima-None]</name>
+      <attachments/>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="13920-MainThread"/>
+        <label name="host" value="DESKTOP-L8IB5JE"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case start="1541243365598" status="passed" stop="1541243390143">
+      <name>Test_Login.test_login[itheima-123456-itheima-None]</name>
+      <attachments/>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="13920-MainThread"/>
+        <label name="host" value="DESKTOP-L8IB5JE"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case start="1541243390144" status="passed" stop="1541243417128">
+      <name>Test_Login.test_login[ 18610453007 -123456-itheima-None]</name>
+      <attachments/>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="13920-MainThread"/>
+        <label name="host" value="DESKTOP-L8IB5JE"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case start="1541243417129" status="passed" stop="1541243442779">
+      <name>Test_Login.test_login[ itheima -123456-itheima-None]</name>
+      <attachments/>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="13920-MainThread"/>
+        <label name="host" value="DESKTOP-L8IB5JE"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case start="1541243442781" status="failed" stop="1541243448057">
+      <name>Test_Login.test_login[186104530077-123456-None-\u6b64\u7528\u6237\u4e0d\u5b58\u5728]</name>
+      <failure>
+        <message>TypeError: argument of type 'WebElement' is not iterable</message>
+        <stack-trace>self = &lt;test_login.Test_Login object at 0x000002DB77BB0240&gt;, username = '186104530077', password = '123456', expect_result = None, expect_toast = '此用户不存在'
+
+    @pytest.mark.parametrize("username,password,expect_result,expect_toast",get_data())
+    def test_login(self,username,password,expect_result,expect_toast):
+        #如果条件成立就是正向用例
+        if expect_result:
+            try:
+                self.login.login_username(username)
+                self.login.login_password(password)
+                self.login.login_btn()
+                niname = self.login.get_niname()
+                assert expect_result in niname
+                self.login.click_setting()
+                self.login.drog_drop()
+                self.login.click_exit()
+                self.login.click_exit_ok()
+                self.login.click_me()
+                self.login.username_ok()
+            except:
+                self.login.get_screenshot()
+                with open("./Image/fild.png","rb")as f:
+                    allure.attach("失败原因请看附加图",f.read(),allure.attach_type.PNG)
+                raise
+            #若if条件没有成立就是逆向用例，就是没有登录成功，所以要再次输入账号密码，然后断言toast消息，确定问题所在
+        else:
+            try:
+                self.login.login_username(username)
+                self.login.login_password(password)
+                self.login.login_btn()
+&gt;               assert expect_toast in self.login.get_toast(expect_toast)
+E               TypeError: argument of type 'WebElement' is not iterable
+
+scripts\test_login.py:55: TypeError</stack-trace>
+      </failure>
+      <attachments>
+        <attachment source="427c49b4-eb37-41a7-a25c-befbb4dfa1f5-attachment.png" title="失败原因请看附加图" type="image/png"/>
+      </attachments>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="13920-MainThread"/>
+        <label name="host" value="DESKTOP-L8IB5JE"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case start="1541243448061" status="failed" stop="1541243452008">
+      <name>Test_Login.test_login[18610453007-1234566-None-\u767b\u5f55\u5bc6\u7801\u9519\u8bef]</name>
+      <failure>
+        <message>TypeError: argument of type 'WebElement' is not iterable</message>
+        <stack-trace>self = &lt;test_login.Test_Login object at 0x000002DB77BB02E8&gt;, username = '18610453007', password = '1234566', expect_result = None, expect_toast = '登录密码错误'
+
+    @pytest.mark.parametrize("username,password,expect_result,expect_toast",get_data())
+    def test_login(self,username,password,expect_result,expect_toast):
+        #如果条件成立就是正向用例
+        if expect_result:
+            try:
+                self.login.login_username(username)
+                self.login.login_password(password)
+                self.login.login_btn()
+                niname = self.login.get_niname()
+                assert expect_result in niname
+                self.login.click_setting()
+                self.login.drog_drop()
+                self.login.click_exit()
+                self.login.click_exit_ok()
+                self.login.click_me()
+                self.login.username_ok()
+            except:
+                self.login.get_screenshot()
+                with open("./Image/fild.png","rb")as f:
+                    allure.attach("失败原因请看附加图",f.read(),allure.attach_type.PNG)
+                raise
+            #若if条件没有成立就是逆向用例，就是没有登录成功，所以要再次输入账号密码，然后断言toast消息，确定问题所在
+        else:
+            try:
+                self.login.login_username(username)
+                self.login.login_password(password)
+                self.login.login_btn()
+&gt;               assert expect_toast in self.login.get_toast(expect_toast)
+E               TypeError: argument of type 'WebElement' is not iterable
+
+scripts\test_login.py:55: TypeError</stack-trace>
+      </failure>
+      <attachments>
+        <attachment source="f552a2d0-3fbf-49bf-9c98-26a538ed0f3a-attachment.png" title="失败原因请看附加图" type="image/png"/>
+      </attachments>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="13920-MainThread"/>
+        <label name="host" value="DESKTOP-L8IB5JE"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case start="1541243452010" status="failed" stop="1541243455563">
+      <name>Test_Login.test_login[itheimaa-123456-None-\u6b64\u7528\u6237\u4e0d\u5b58\u5728]</name>
+      <failure>
+        <message>TypeError: argument of type 'WebElement' is not iterable</message>
+        <stack-trace>self = &lt;test_login.Test_Login object at 0x000002DB77B29048&gt;, username = 'itheimaa', password = '123456', expect_result = None, expect_toast = '此用户不存在'
+
+    @pytest.mark.parametrize("username,password,expect_result,expect_toast",get_data())
+    def test_login(self,username,password,expect_result,expect_toast):
+        #如果条件成立就是正向用例
+        if expect_result:
+            try:
+                self.login.login_username(username)
+                self.login.login_password(password)
+                self.login.login_btn()
+                niname = self.login.get_niname()
+                assert expect_result in niname
+                self.login.click_setting()
+                self.login.drog_drop()
+                self.login.click_exit()
+                self.login.click_exit_ok()
+                self.login.click_me()
+                self.login.username_ok()
+            except:
+                self.login.get_screenshot()
+                with open("./Image/fild.png","rb")as f:
+                    allure.attach("失败原因请看附加图",f.read(),allure.attach_type.PNG)
+                raise
+            #若if条件没有成立就是逆向用例，就是没有登录成功，所以要再次输入账号密码，然后断言toast消息，确定问题所在
+        else:
+            try:
+                self.login.login_username(username)
+                self.login.login_password(password)
+                self.login.login_btn()
+&gt;               assert expect_toast in self.login.get_toast(expect_toast)
+E               TypeError: argument of type 'WebElement' is not iterable
+
+scripts\test_login.py:55: TypeError</stack-trace>
+      </failure>
+      <attachments>
+        <attachment source="73a5ede1-7c38-4a79-bd24-90babf278bee-attachment.png" title="失败原因请看附加图" type="image/png"/>
+      </attachments>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="13920-MainThread"/>
+        <label name="host" value="DESKTOP-L8IB5JE"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case start="1541243455566" status="failed" stop="1541243460437">
+      <name>Test_Login.test_login[itheima-1234566-None-\u767b\u5f55\u5bc6\u7801\u9519\u8bef]</name>
+      <failure>
+        <message>TypeError: argument of type 'WebElement' is not iterable</message>
+        <stack-trace>self = &lt;test_login.Test_Login object at 0x000002DB77B83320&gt;, username = 'itheima', password = '1234566', expect_result = None, expect_toast = '登录密码错误'
+
+    @pytest.mark.parametrize("username,password,expect_result,expect_toast",get_data())
+    def test_login(self,username,password,expect_result,expect_toast):
+        #如果条件成立就是正向用例
+        if expect_result:
+            try:
+                self.login.login_username(username)
+                self.login.login_password(password)
+                self.login.login_btn()
+                niname = self.login.get_niname()
+                assert expect_result in niname
+                self.login.click_setting()
+                self.login.drog_drop()
+                self.login.click_exit()
+                self.login.click_exit_ok()
+                self.login.click_me()
+                self.login.username_ok()
+            except:
+                self.login.get_screenshot()
+                with open("./Image/fild.png","rb")as f:
+                    allure.attach("失败原因请看附加图",f.read(),allure.attach_type.PNG)
+                raise
+            #若if条件没有成立就是逆向用例，就是没有登录成功，所以要再次输入账号密码，然后断言toast消息，确定问题所在
+        else:
+            try:
+                self.login.login_username(username)
+                self.login.login_password(password)
+                self.login.login_btn()
+&gt;               assert expect_toast in self.login.get_toast(expect_toast)
+E               TypeError: argument of type 'WebElement' is not iterable
+
+scripts\test_login.py:55: TypeError</stack-trace>
+      </failure>
+      <attachments>
+        <attachment source="10387903-284d-4dda-bdf8-f0c843f0c8b6-attachment.png" title="失败原因请看附加图" type="image/png"/>
+      </attachments>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="13920-MainThread"/>
+        <label name="host" value="DESKTOP-L8IB5JE"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps/>
+    </test-case>
+  </test-cases>
+</ns0:test-suite>
